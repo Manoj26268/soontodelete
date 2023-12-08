@@ -56,7 +56,7 @@ router.get('/logout', (req, res, next) => {
       return next(err);
     }
     res.clearCookie('token');
-    res.redirect('http://localhost:3000/login');
+    res.redirect('https://backend-for-frontend-now.onrender.com/login');
   });
 });
 
@@ -93,7 +93,7 @@ router.post('/register', async (req, res) => {
 passport.use(new GoogleStrategy({
   clientID: '425263948762-6aslqkvbo0e5iup68ie06eepa982vd0e.apps.googleusercontent.com',
   clientSecret: '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',
-  callbackURL: 'http://localhost:4000/auth/google/dashboard',
+  callbackURL: 'https://backend-for-frontend-now.onrender.com/auth/google/dashboard',
 }, async (accessToken, refreshToken, profile, done) => {
   try {
     // Check if the user already exists in the database based on Google ID
