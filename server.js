@@ -177,7 +177,8 @@ app.get('/auth/google/dashboard',
   (req, res) => {
     const token = jwt.sign({ googleId: req.user.googleId }, 'secret_key', { expiresIn: '1h' });
     res.cookie('token', token);
-    res.redirect('/dashboard');
+    res.redirect('https://backend-for-frontend-now.onrender.com/dashboard');
+
   }
 );
 
