@@ -60,6 +60,11 @@ passport.deserializeUser(async (id, done) => {
     done(error, null);
   }
 });
+
+app.get('/home',(req,res)=>{
+  res.render('home');
+
+});
 // Use the authRouter for authentication routes
 app.use('/', authRouter);
 
@@ -84,10 +89,7 @@ app.use('/dashboard', (req, res, next) => {
   });
 });
 
-app.get('/home',(req,res)=>{
-  res.render('home');
 
-});
 // Dashboard route
 app.get('/dashboard', async(req, res) => {
   const { username, googleId } = req.user;
